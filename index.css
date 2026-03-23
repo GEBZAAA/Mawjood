@@ -1,0 +1,114 @@
+
+:root {
+  /* Silky Palette Colors */
+  --silky-50: #F7E1BE;
+  --silky-100: #F8D6B3;
+  --silky-200: #EAC39C;
+  --silky-300: #DCAF85;
+  --silky-400: #CD9F6E;
+  --silky-500: #A9875A;
+  --silky-600: #83673F;
+  --silky-700: #5C4624;
+  --silky-800: #44331A;
+  --silky-900: #2C2111;
+  --silky-950: #1a140a;
+}
+
+/* 
+  SILKY LIGHT THEME OVERRIDES
+  These only apply when the .dark class is NOT present.
+  This ensures the dark theme remains exactly as it was (default Tailwind).
+*/
+html:not(.dark) body {
+  background-color: var(--silky-50) !important;
+  color: var(--silky-900) !important;
+}
+
+html:not(.dark) .bg-creamy {
+  background-color: var(--silky-50) !important;
+}
+
+/* Emerald Overrides for Light Mode */
+html:not(.dark) .bg-emerald-50 { background-color: var(--silky-50) !important; }
+html:not(.dark) .bg-emerald-100 { background-color: var(--silky-100) !important; }
+html:not(.dark) .bg-emerald-200 { background-color: var(--silky-200) !important; }
+html:not(.dark) .bg-emerald-500 { background-color: var(--silky-500) !important; }
+html:not(.dark) .bg-emerald-600 { background-color: var(--silky-600) !important; }
+html:not(.dark) .bg-emerald-700 { background-color: var(--silky-700) !important; }
+html:not(.dark) .bg-emerald-800 { background-color: var(--silky-800) !important; }
+html:not(.dark) .bg-emerald-900 { background-color: var(--silky-900) !important; }
+html:not(.dark) .bg-emerald-950 { background-color: var(--silky-950) !important; }
+
+html:not(.dark) .text-emerald-600 { color: var(--silky-600) !important; }
+html:not(.dark) .text-emerald-700 { color: var(--silky-700) !important; }
+html:not(.dark) .text-emerald-800 { color: var(--silky-800) !important; }
+html:not(.dark) .text-emerald-900 { color: var(--silky-900) !important; }
+
+html:not(.dark) .border-emerald-100 { border-color: var(--silky-100) !important; }
+html:not(.dark) .border-emerald-200 { border-color: var(--silky-200) !important; }
+
+html:not(.dark) .hover\:bg-emerald-700:hover { background-color: var(--silky-700) !important; }
+html:not(.dark) .hover\:text-emerald-700:hover { color: var(--silky-700) !important; }
+
+/* Slate Overrides for Light Mode */
+html:not(.dark) .text-slate-900 { color: var(--silky-900) !important; }
+html:not(.dark) .text-slate-800 { color: var(--silky-800) !important; }
+html:not(.dark) .text-slate-700 { color: var(--silky-700) !important; }
+html:not(.dark) .text-slate-600 { color: var(--silky-600) !important; }
+html:not(.dark) .text-slate-500 { color: var(--silky-500) !important; }
+html:not(.dark) .text-slate-400 { color: var(--silky-400) !important; }
+
+html:not(.dark) .bg-slate-50 { background-color: var(--silky-50) !important; }
+html:not(.dark) .border-slate-200 { border-color: var(--silky-200) !important; }
+
+/* Gray Overrides for Light Mode */
+html:not(.dark) .text-gray-900 { color: var(--silky-900) !important; }
+html:not(.dark) .text-gray-600 { color: var(--silky-600) !important; }
+html:not(.dark) .text-gray-500 { color: var(--silky-500) !important; }
+html:not(.dark) .text-gray-400 { color: var(--silky-400) !important; }
+html:not(.dark) .bg-gray-100 { background-color: var(--silky-100) !important; }
+html:not(.dark) .bg-gray-50 { background-color: var(--silky-50) !important; }
+
+/* Custom Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(131, 103, 63, 0.2); /* silky-600 */
+  border-radius: 20px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+.dark .custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(16, 185, 129, 0.2);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(131, 103, 63, 0.4);
+}
+.dark .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(16, 185, 129, 0.4);
+}
+
+@keyframes bounce-subtle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+.animate-bounce-subtle {
+  animation: bounce-subtle 2s infinite ease-in-out;
+}
+
+[dir="rtl"] {
+  font-family: 'Cairo', sans-serif;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
