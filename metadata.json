@@ -1,0 +1,5 @@
+{
+  "name": "MAWJOOD",
+  "description": "Lost and Found system for pilgrims in the Holy Cities.",
+  "requestFramePermissions": ["camera"]
+}
