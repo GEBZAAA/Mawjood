@@ -12,12 +12,8 @@ const app = express();
 app.set('trust proxy', 1);
 const PORT = process.env.PORT || 3000;
 
-if (!process.env.JWT_SECRET) {
-  console.error('FATAL: JWT_SECRET environment variable is not set!');
-  process.exit(1);
-}
-const JWT_SECRET = process.env.JWT_SECRET;
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://GEBALY:Omar%40123@gebaly.h42f6t1.mongodb.net/mawjood?appName=GEBALY';
+const JWT_SECRET = process.env.JWT_SECRET || 'mawjood2026secure';
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://omarelgebaly100_db_user:laP417RHMbNm5Sj1@gebz1.eixijzi.mongodb.net/mawjood?appName=Gebz1';
 
 let db: any;
 
@@ -81,7 +77,6 @@ const toId = (doc: any) => doc ? { ...doc, id: doc._id?.toString(), _id: undefin
 
 app.get('/api/health', (req, res) => res.json({ status: 'ok', mode: process.env.NODE_ENV || 'development' }));
 
-// Login
 app.post('/api/login', loginLimiter, async (req, res) => {
   try {
     const username = sanitize(req.body.username, 100);
@@ -100,7 +95,6 @@ app.post('/api/login', loginLimiter, async (req, res) => {
   } catch (e: any) { res.status(500).json({ message: 'Internal server error' }); }
 });
 
-// Signup
 app.post('/api/signup', signupLimiter, async (req, res) => {
   try {
     const username = sanitize(req.body.username, 50);
@@ -124,7 +118,6 @@ app.post('/api/signup', signupLimiter, async (req, res) => {
   } catch (e: any) { res.status(500).json({ message: 'Internal server error' }); }
 });
 
-// Admin accounts
 app.post('/api/mgmt/accounts', authenticateToken, async (req: any, res) => {
   try {
     if (req.user.role !== 'MANAGER' && req.user.role !== 'ADMIN') return res.status(403).json({ message: 'Access denied' });
